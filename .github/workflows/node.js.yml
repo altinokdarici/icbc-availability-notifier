@@ -34,7 +34,7 @@ jobs:
 
       - name: create parameters file
         run: |
-          echo "$BICEP_PARAMETERS" >> main.parameters.json
+          printf "$BICEP_PARAMETERS" >> main.parameters.json
           cat main.parameters.json
         shell: bash
         env:
