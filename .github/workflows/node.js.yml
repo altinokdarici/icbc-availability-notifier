@@ -43,7 +43,7 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ secrets.AZURE_RG }}
           template: ./.azure/main.bicep
-          parameters: twilio=${{ secrets.TWILLIO }} driver=${{ secrets.DRIVER }} appName=${{ env.AZURE_FUNCTIONAPP_NAME }}
+          parameters: twilio="${{ secrets.TWILLIO }}" driver="${{ secrets.DRIVER }}" appName="${{ env.AZURE_FUNCTIONAPP_NAME }}"
           failOnStdErr: false
 
       - name: "Run Azure Functions Action"
