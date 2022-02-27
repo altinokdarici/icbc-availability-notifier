@@ -7,9 +7,10 @@ export interface DriverInfo {
 }
 
 export const getDriverInfo = (): DriverInfo => {
+  const driver = JSON.parse(getEnvironmentVariable("Driver"));
   return {
-    lastName: getEnvironmentVariable("DriverLastName"),
-    licenseNumber: getEnvironmentVariable("DriverLicenseNumber"),
-    keyword: getEnvironmentVariable("DriverKeyword"),
+    lastName: driver.lastName,
+    licenseNumber: driver.licenseNumber,
+    keyword: driver.keyword,
   };
 };

@@ -3,13 +3,8 @@
 param appName string
 
 param location string = resourceGroup().location
-param driverKeyword string
-param driverLicenseNumber string
-param driverLastName string
-param twilioFromPhoneNumber string
-param twilioToPhoneNumber string
-param twilioAccountSid string
-param twilioToken string
+param driver string
+param twilio string
 
 var storageAccountName = '${appName}${uniqueString(resourceGroup().id)}'
 var hostingPlanName = '${appName}${uniqueString(resourceGroup().id)}'
@@ -72,32 +67,12 @@ resource functionApp 'Microsoft.Web/sites@2020-06-01' = {
           value: 'node'
         }
         {
-          name: 'DriverKeyword'
-          value: driverKeyword
+          name: 'Driver'
+          value: driver
         }
         {
-          name: 'DriverLicenseNumber'
-          value: driverLicenseNumber
-        }
-        {
-          name: 'DriverLastName'
-          value: driverLastName
-        }
-        {
-          name: 'TwilioFromPhoneNumber'
-          value: twilioFromPhoneNumber
-        }
-        {
-          name: 'TwilioToPhoneNumber'
-          value: twilioToPhoneNumber
-        }
-        {
-          name: 'TwilioAccountSid'
-          value: twilioAccountSid
-        }
-        {
-          name: 'TwilioToken'
-          value: twilioToken
+          name: 'Twilio'
+          value: twilio
         }
         {
           name: 'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING'

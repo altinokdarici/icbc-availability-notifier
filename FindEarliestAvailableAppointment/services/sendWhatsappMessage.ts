@@ -2,11 +2,13 @@ import Twilio from "twilio";
 import { getEnvironmentVariable } from "../utils";
 
 const getConfig = () => {
+  const twilioSettings = JSON.parse(getEnvironmentVariable("Twilio"));
+
   return {
-    accountSid: getEnvironmentVariable("TwilioAccountSid"),
-    token: getEnvironmentVariable("TwilioToken"),
-    to: getEnvironmentVariable("TwilioToPhoneNumber"),
-    from: getEnvironmentVariable("TwilioFromPhoneNumber"),
+    accountSid: twilioSettings.accountSid,
+    token: twilioSettings.token,
+    to: twilioSettings.to,
+    from: twilioSettings.from,
   };
 };
 
