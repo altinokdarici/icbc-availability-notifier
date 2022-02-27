@@ -35,7 +35,7 @@ const timerTrigger: AzureFunction = async function (
 
   context.log("Last Stored Date", lastStoredDate);
 
-  const newDate = new Date("2022-06-06"); // await getFirstAvailableAppointmentDate(searchConfig);
+  const newDate = await getFirstAvailableAppointmentDate(searchConfig);
   context.log("ICBC First Available Date", newDate);
 
   if (!lastStoredDate || newDate < lastStoredDate) {
