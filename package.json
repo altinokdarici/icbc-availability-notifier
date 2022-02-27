@@ -9,7 +9,6 @@
     "start": "func start"
   },
   "dependencies": {
-    "@azure/storage-blob": "^12.8.0",
     "node-fetch": "^2.6.7",
     "twilio": "^3.75.0"
   },
