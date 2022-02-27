@@ -45,7 +45,10 @@ const timerTrigger: AzureFunction = async function (
     context.bindings.storedAppointmentDateOutput = toShortDateString(newDate);
 
     context.log("Sending Whatsapp message");
-    const messageResult = await sendWhatsappMessage(toShortDateString(newDate));
+    const messageResult = await sendWhatsappMessage(
+      toShortDateString(newDate),
+      context.log
+    );
     context.log("Whatsapp message has been sent", messageResult);
   }
 
