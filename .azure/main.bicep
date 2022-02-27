@@ -1,12 +1,12 @@
 @minLength(3)
-@maxLength(10)
+@maxLength(24)
 param appName string
 
 param location string = resourceGroup().location
 param driver string
 param twilio string
 
-var storageAccountName = '${appName}${uniqueString(resourceGroup().id)}'
+var storageAccountName = '${substring(appName, 0, 10)}${uniqueString(resourceGroup().id)}'
 var hostingPlanName = '${appName}${uniqueString(resourceGroup().id)}'
 var appInsightsName = '${appName}${uniqueString(resourceGroup().id)}'
 var functionAppName = appName
