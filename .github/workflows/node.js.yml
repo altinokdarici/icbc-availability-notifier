@@ -37,7 +37,7 @@ jobs:
           echo "$BICEP_PARAMETERS" >> main.parameters.json
         shell: bash
         env:
-          DEV_ENV_FILE: ${{ secrets.BICEP_PARAMETERS }}
+          BICEP_PARAMETERS: ${{ secrets.BICEP_PARAMETERS }}
 
       # Deploy Bicep file
       - name: deploy
