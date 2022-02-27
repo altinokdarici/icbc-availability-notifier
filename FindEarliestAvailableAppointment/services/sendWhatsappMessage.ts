@@ -1,10 +1,10 @@
 import Twilio from "twilio";
 import { getEnvironmentVariable } from "../utils";
 
-const getConfig = (logger: (message: string) => void) => {
+const getConfig = (log: (...args: any[]) => void) => {
   const json = getEnvironmentVariable("Twilio");
-  logger(json);
-  
+  log(json);
+
   const twilioSettings = JSON.parse(json);
 
   return {
@@ -17,9 +17,9 @@ const getConfig = (logger: (message: string) => void) => {
 
 export const sendWhatsappMessage = async (
   body: string,
-  logger: (message: string) => void
+  log: (...args: any[]) => void
 ) => {
-  const { accountSid, token, from, to } = getConfig(logger);
+  const { accountSid, token, from, to } = getConfig(log);
 
   const client = new Twilio.Twilio(accountSid, token);
 
