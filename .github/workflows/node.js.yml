@@ -42,5 +42,5 @@ jobs:
           parameters:
             twilio=${{ secrets.TWILLIO }}
             driver=${{ secrets.DRIVER }}
-            appName="icbc-notifier"
+            appName=icbcnot
           failOnStdErr: false
