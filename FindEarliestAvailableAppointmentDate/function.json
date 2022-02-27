@@ -1,0 +1,25 @@
+{
+  "bindings": [
+    {
+      "name": "functionTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "*/30 * * * * *"
+    },
+    {
+      "name": "storedAppointmentDateInput",
+      "type": "blob",
+      "path": "container/earliest-appointment-date",
+      "connection": "AzureStorageConnectionString",
+      "direction": "in"
+    },
+    {
+      "name": "storedAppointmentDateOutput",
+      "type": "blob",
+      "path": "container/earliest-appointment-date",
+      "connection": "AzureStorageConnectionString",
+      "direction": "out"
+    }
+  ],
+  "scriptFile": "../dist/TimerTrigger1/index.js"
+}
