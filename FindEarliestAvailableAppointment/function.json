@@ -1,0 +1,25 @@
+{
+  "bindings": [
+    {
+      "name": "functionTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "*/30 * * * * *"
+    },
+    {
+      "name": "storedAppointmentDateInput",
+      "type": "blob",
+      "path": "container/earliest-appointment-date",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "name": "storedAppointmentDateOutput",
+      "type": "blob",
+      "path": "container/earliest-appointment-date",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    }
+  ],
+  "scriptFile": "../dist/FindEarliestAvailableAppointment/index.js"
+}
