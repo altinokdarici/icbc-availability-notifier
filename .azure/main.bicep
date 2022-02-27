@@ -9,7 +9,7 @@ param driverLastName string
 param twilioFromPhoneNumber string
 param twilioToPhoneNumber string
 param twilioAccountSid string
-param TwilioToken string
+param twilioToken string
 
 var storageAccountName = '${appName}${uniqueString(resourceGroup().id)}'
 var hostingPlanName = '${appName}${uniqueString(resourceGroup().id)}'
@@ -97,7 +97,7 @@ resource functionApp 'Microsoft.Web/sites@2020-06-01' = {
         }
         {
           name: 'TwilioToken'
-          value: TwilioToken
+          value: twilioToken
         }
         {
           name: 'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING'
