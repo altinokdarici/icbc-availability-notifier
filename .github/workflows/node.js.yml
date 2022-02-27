@@ -10,7 +10,7 @@ on:
     branches: [main]
 
 env:
-  AZURE_FUNCTIONAPP_NAME: icbc-notifier # set this to your application's name
+  AZURE_FUNCTIONAPP_NAME: icbcnotifier # set this to your application's name
   AZURE_FUNCTIONAPP_PACKAGE_PATH: "." # set this to the path to your web app project, defaults to the repository root
 
 jobs:
