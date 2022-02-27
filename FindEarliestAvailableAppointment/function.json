@@ -4,7 +4,7 @@
       "name": "functionTimer",
       "type": "timerTrigger",
       "direction": "in",
-      "schedule": "* * */4 * * *"
+      "schedule": "0 0 * * * *"
     },
     {
       "name": "storedAppointmentDateInput",
