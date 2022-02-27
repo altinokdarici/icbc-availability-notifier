@@ -67,6 +67,10 @@ resource functionApp 'Microsoft.Web/sites@2020-06-01' = {
           value: 'node'
         }
         {
+          name: 'WEBSITE_NODE_DEFAULT_VERSION'
+          value: '~14'
+        }
+        {
           name: 'Driver'
           value: driver
         }
